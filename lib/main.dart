@@ -7,6 +7,9 @@ void main() {
   runApp(const MyApp());
 }
 
+
+
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -23,6 +26,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
+
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
   
@@ -33,6 +40,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  //questionmarks behind datatypes for nullsaftey
   File? _image;
   ImagePicker? _imagePicker;
 
@@ -42,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _imagePicker = ImagePicker();
   }
 
+  //Capture image from camera
   void captureImageCamera() async {
     XFile? image = await _imagePicker?.pickImage(source: ImageSource.camera);
     setState(() {
@@ -49,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  //Select image from gallery
   void selectImageGallery() async {
     XFile? image = await _imagePicker?.pickImage(source: ImageSource.gallery);
     setState(() {
@@ -56,8 +66,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void selectImageCamera() {}
 
+  //deploying the button with double functions, tap for gallery, hold for camera
   @override
   Widget build(BuildContext context) {
     return Scaffold(
