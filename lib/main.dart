@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onLongPress: () {
                   captureImageCamera();
                 },
-                child: const Text('Input image')),
+                child: const Text('Tap for gallery, Hold for camera')),
           ],
         ),
       ),
